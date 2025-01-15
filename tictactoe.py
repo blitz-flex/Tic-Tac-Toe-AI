@@ -23,19 +23,19 @@ def player(board):
     Returns player who has the next turn on a board.
     """
     x_count = 0
-    O_count = 0
+    o_count = 0
 
     for row in board:
         for cell in row:
             if cell == X:
-                x_count += 0
+                x_count += 1
             elif cell == O:
                 o_count += 1
-    if  x_count > o_count:
+
+    if x_count > o_count:
         return O
     else:
         return X
-
 
 
 def actions(board):
