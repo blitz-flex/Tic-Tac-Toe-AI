@@ -42,7 +42,16 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    raise NotImplementedError
+
+    # Creating an empty set to store possible actions.
+    actions_set = set() 
+    # 3x3 check
+    for i in range(3):
+        for j in  range(3):
+            if board[i][j] == EMPTY:    # If the tray is empty
+                actions_set.add((i,j))  #The pair of actions (i, j) must be added to this cell.
+
+    return actions_set   # Returns the set of all possible actions.
 
 
 def result(board, action):
