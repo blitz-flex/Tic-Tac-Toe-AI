@@ -25,6 +25,7 @@ def player(board):
     x_count = 0
     o_count = 0
 
+    # Iterate through each row and each cell on the board
     for row in board:
         for cell in row:
             if cell == X:
@@ -32,6 +33,7 @@ def player(board):
             elif cell == O:
                 o_count += 1
 
+    # If X's count is greater than O's count, O will make the next move
     if x_count > o_count:
         return O
     else:
