@@ -60,7 +60,22 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    raise NotImplementedError
+    if action is None:
+        raise ValueError ("action canot br None")
+    
+    
+    i, j = action    # Unpack the action tuple into row (i) and column (j)
+    if board[i][j] != EMPTY:
+        raise ValueError("Invalid action: Cell is not empty")
+    
+    # Create board copy
+    new_board = [row[:] for row in board]
+
+    # Place the current player's symbol (X or O) on the new board
+    new_board[i][j] = player(board)
+
+    return new_board
+
 
 
 def winner(board):
