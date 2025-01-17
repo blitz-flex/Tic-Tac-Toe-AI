@@ -76,7 +76,36 @@ def result(board, action):
 
     return new_board
 
+    # Example
+    """
+    Input
+    board = [
+    [X, O, EMPTY],
+    [EMPTY, X, O],
+    [O, EMPTY, EMPTY]
+    ]
 
+    Action: (2, 1)
+    Check if board[1][0] is EMPTY ✓
+    Make copy
+
+    new_board = [
+    [X, O, EMPTY],
+    [EMPTY, X, O],
+    [O, EMPTY, EMPTY]
+    ]
+
+    Place X (since X=2 moves, O=2 moves)
+    new_board[1][0] = X
+
+    Output
+    new_board = [
+    [X, O, EMPTY],
+    [X, X, O],
+    [O, EMPTY, EMPTY]
+    ]
+    """
+    
 
 def winner(board):
     """
