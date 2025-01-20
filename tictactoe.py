@@ -139,6 +139,13 @@ def terminal(board):
     """
     if winner (board) is not None:
         return True
+    
+    for row in board:
+        for cell in row:
+            if cell == EMPTY:
+                return False
+
+    return True
 
 
 def utility(board):
