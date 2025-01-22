@@ -167,4 +167,35 @@ def minimax(board):
     if terminal(board):
         return None
     
+    # Get the current player based on the board state
+    current_player = player(board)
+
+    # If the current player is X, we are maximizing the score
+    if current_player == X:
+        best_score = -math.inf
+        best_action = None
+
+        # Loop through all possible actions (moves) on the board
+        for action in actions(board):
+            score = min_value(result(board, action))
+            if score > best_score:
+                best_score = score
+                best_action = action
+        return best_action
+
+    # If the current player is O, we are minimizing the score
+    elif current_player == O:
+        best_score = math.inf
+        best_action = None
+        for action in actions(board):
+            score = max_value(result(board, action))
+            if score < best_score:
+                best_score = score
+                best_action = action
+        return best_action
+
+
+
+        
+    
     
