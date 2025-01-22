@@ -199,8 +199,10 @@ def max_value(board):
     if terminal(board):
         return utility(board)
     
+def min_value(board):
+    if terminal(board):
+        return utility(board)
 
-    
         
     
     
