@@ -195,7 +195,12 @@ def minimax(board):
         return best_action
 
 
+def max_value(board):
+    if terminal(board):
+        return utility(board)
+    
 
+    
         
     
     
