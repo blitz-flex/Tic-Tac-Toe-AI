@@ -15,3 +15,5 @@ The AI uses the Minimax algorithm to determine the optimal move. This recursive 
 - Explores all possible game states
 - Evaluate each potential move
 - Chooses the move that maximizes the AI's chances of winning (or minimizing losing)
+
+## Functions in `tictactoe.py`
