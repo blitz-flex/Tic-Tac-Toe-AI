@@ -17,3 +17,15 @@ The AI uses the Minimax algorithm to determine the optimal move. This recursive 
 - Chooses the move that maximizes the AI's chances of winning (or minimizing losing)
 
 ## Functions in `tictactoe.py`
+
+### Core Game Logic
+- `initial_state()`: Returns the initial empty game board
+- `player(board)`: Determines the current player's turn
+- `actions(board)`: Generates list of possible moves
+- `result(board, action)`: Creates a new board state after a move
+- `winner(board)`: Checks for a winner
+- `terminal(board)`: Checks if the game is over
+- `utility(board)`: Assigns utility values (1 for X win, -1 for O win, 0 for draw)
+
+### AI Logic
+- `minimax(board)`: Implements the Minimax algorithm to choose the optimal move
