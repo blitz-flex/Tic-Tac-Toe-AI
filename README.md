@@ -1,4 +1,4 @@
-# Tic-Tac-Toe with Minimax AI
+# Tic-Tac-Toe  AI
 
 ## Project Overview
 This is a Python implementation of Tic-Tac-Toe featuring an AI opponent using the Minimax algorithm. The AI plays optimally, ensuring it never loses a game when playing perfectly.
