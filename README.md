@@ -1,14 +1,17 @@
 # Tic-Tac-Toe  AI
 
 ## Project Overview
-This is a Python implementation of Tic-Tac-Toe featuring an AI opponent using the Minimax algorithm. The AI plays optimally, ensuring it never loses a game when playing perfectly.
+
+This project is a Python implementation of the classic game Tic-Tac-Toe, featuring an unbeatable AI opponent.  The AI employs the Minimax algorithm with Alpha-Beta Pruning to ensure optimal decision-making, guaranteeing it will never lose. This project serves as both an engaging game to play and an excellent educational resource for learning about game AI principles.
 
 ## Project Structure
-- `runner.py`: Contains the graphical user interface for the game
-- `tictactoe.py`: Implements the game logic and AI functionality
+
+- `runner.py`: The main executable file.  It handles the graphical user interface (GUI) using Pygame, user input, and displaying the game.
+- `tictactoe.py`:  Contains the core game logic and the AI's implementation (Minimax with Alpha-Beta Pruning).
+
 
 ## Game Mechanics
-The game uses a 3x3 grid where two players (X and O) take turns placing their marks. The objective is to get three of your marks in a row, column, or diagonal.
+Tic-Tac-Toe is played on a 3x3 grid. Two players, typically designated as 'X' and 'O', take turns placing their respective marks in empty cells. The objective is to be the first player to align three of their marks in a row, either horizontally, vertically, or diagonally. If all cells are filled and no player has achieved a winning alignment, the game is declared a draw.
 
 ## Minimax Algorithm
 The AI uses the Minimax algorithm to determine the optimal move. This recursive algorithm:
@@ -19,13 +22,19 @@ The AI uses the Minimax algorithm to determine the optimal move. This recursive 
 ## Functions in `tictactoe.py`
 
 ### Core Game Logic
-- `initial_state()`: Returns the initial empty game board
-- `player(board)`: Determines the current player's turn
-- `actions(board)`: Generates list of possible moves
-- `result(board, action)`: Creates a new board state after a move
-- `winner(board)`: Checks for a winner
-- `terminal(board)`: Checks if the game is over
-- `utility(board)`: Assigns utility values (1 for X win, -1 for O win, 0 for draw)
+- `initial_state()`:  This function initializes and returns an empty 3x3 Tic-Tac-Toe game board. The board is represented as a list of lists.
+  
+- `player(board)`: Given the current state of the `board`, this function determines and returns whose turn it is to play. It returns 'X' or 'O' to indicate the current player.
+  
+- `actions(board)`:  This function identifies all possible moves available on the `board` in its current state. It returns a set of empty cells, with each cell represented as a `(row, col)` tuple.
+  
+- `result(board, action)`:  This function takes the current `board` state and a player's `action` (move) as input. It returns a new board state that reflects the result of applying the given `action` to the provided `board`. Crucially, this function operates without modifying the original `board` and includes validation to ensure the `action` is valid.
+  
+- `winner(board)`:  This function checks the `board` to determine if a player has won the game. It returns 'X' if player X has won, 'O' if player O has won, and `None` if there is no winner in the current board state.
+  
+- `terminal(board)`: This function assesses whether the game has reached a terminal state, meaning the game is over. It returns `True` if the game has ended (either by a win or a draw) and `False` otherwise.
+  
+- `utility(board)`:  This function evaluates a final `board` state when the game is over. It returns a utility score: `1` if 'X' wins, `-1` if 'O' wins, and `0` in the case of a draw.
 
 ### AI Logic
 - `minimax(board)`: Implements the Minimax algorithm to choose the optimal move
